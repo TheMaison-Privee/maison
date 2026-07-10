@@ -1,0 +1,230 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #0A0A0A;
+    color: #F5F4F0;
+    font-family: 'Montserrat', sans-serif;
+    overflow: hidden; 
+    -webkit-font-smoothing: antialiased;
+}
+
+.d-none { display: none !important; }
+.d-none-flex { display: none !important; }
+
+/* Selector de Idioma Flotante */
+.lang-nav {
+    position: fixed;
+    top: 30px;
+    right: 5%;
+    z-index: 3000;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+}
+.lang-btn {
+    background: none;
+    border: none;
+    color: #444;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    transition: color 0.3s;
+}
+.lang-btn:hover, .lang-btn.active { 
+    color: #C5A880; 
+}
+
+/* ==========================================================================
+   1. INTRO CINEMATOGRÁFICA
+   ========================================================================== */
+.cinema-hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+.hero-bg-image {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: url('tu-foto-editorial-oscura.jpg'); 
+    background-size: cover; background-position: center;
+    opacity: 0; transform: scale(1.02);
+    animation: fadeInFoto 2.5s ease forwards 1s;
+    transition: transform 2.5s ease, opacity 1.8s ease;
+    z-index: 1;
+}
+.hero-overlay {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: radial-gradient(circle, rgba(10,10,10,0.6) 0%, rgba(10,10,10,0.95) 100%);
+    z-index: 2;
+}
+.hero-frame { 
+    position: relative; 
+    z-index: 3; 
+    max-width: 650px; 
+}
+
+.brand-title { font-family: 'Cinzel', serif; font-size: 2.4rem; letter-spacing: 10px; font-weight: 400; opacity: 0; animation: fadeInLento 1.2s ease forwards 0.5s; margin-bottom: 5px; color: #ffffff; }
+.brand-subtitle { font-family: 'Cinzel', serif; font-size: 1.1rem; font-style: italic; color: #C5A880; opacity: 0; animation: fadeInLento 1.2s ease forwards 1.2s; margin-bottom: 15px; font-weight: 300; }
+.brand-tagline { font-size: 0.75rem; letter-spacing: 5px; color: #888; text-transform: uppercase; opacity: 0; animation: fadeInLento 1.2s ease forwards 1.7s; margin-bottom: 30px; font-weight: 200; }
+.hero-manifesto { font-size: 0.85rem; font-weight: 200; color: #B5AFAA; line-height: 1.8; opacity: 0; animation: fadeInLento 1.5s ease forwards 2.2s; margin-bottom: 40px; text-align: justify; text-align-last: center; }
+.btn-enter { background: transparent; border: 1px solid #C5A880; color: #C5A880; font-size: 0.8rem; letter-spacing: 3px; padding: 15px 38px; cursor: pointer; opacity: 0; animation: fadeInLento 1.5s ease forwards 3s; transition: all 0.5s ease; text-transform: uppercase; }
+.btn-enter:hover { background-color: #C5A880; color: #0A0A0A; }
+
+.cinema-hero.zoom-out-effect .hero-bg-image { transform: scale(1.1); opacity: 0; }
+.cinema-hero.zoom-out-effect .hero-frame { opacity: 0; transform: translateY(-20px); }
+
+/* ==========================================================================
+   2. PANTALLA DIVIDIDA (BIENVENIDA + TU SILUETA)
+   ========================================================================== */
+.agatha-entrance-screen {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100vh;
+    background-color: #0A0A0A; z-index: 2000;
+}
+.agatha-split-container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+.agatha-text-side {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 8%;
+}
+.agatha-greet { font-family: 'Cinzel', serif; font-size: 2.8rem; color: #C5A880; margin-bottom: 20px; opacity: 0; animation: fadeInLento 2s ease forwards 0.5s; }
+.agatha-text { font-size: 1rem; font-weight: 200; line-height: 1.9; color: #D5D4CE; text-align: justify; opacity: 0; animation: fadeInLento 2s ease forwards 1.4s; margin-bottom: 40px; }
+.btn-continue { background: none; border: none; font-size: 0.75rem; letter-spacing: 4px; color: #888; cursor: pointer; text-align: left; padding-bottom: 5px; border-bottom: 1px solid transparent; opacity: 0; animation: fadeInLento 1.5s ease forwards 2.5s; transition: color 0.4s; text-transform: uppercase; }
+.btn-continue:hover { color: #C5A880; border-bottom-color: #C5A880; }
+
+.agatha-photo-side {
+    width: 50%;
+    height: 100%;
+    background-color: #0F0F0F;
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    animation: fadeInLento 2.5s ease forwards 1s;
+}
+.editorial-body-photo {
+    width: 100%;
+    height: 100%;
+    background-color: #141414;
+    background-size: cover;
+    background-position: center;
+    border: 1px solid rgba(197, 168, 128, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+.photo-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+    color: #444;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.agatha-entrance-screen.fade-out-luxury { opacity: 0; transition: opacity 1.2s ease; pointer-events: none; }
+
+/* ==========================================================================
+   3. EL ATELIER Y CONTENIDOS (DESPLIEGUE GENERAL)
+   ========================================================================== */
+.main-atelier { max-width: 1140px; margin: 0 auto; padding: 100px 4% 40px 4%; opacity: 0; animation: fadeInLento 1.5s ease forwards; }
+.atelier-section { margin-bottom: 120px; }
+.protocol-box { text-align: center; max-width: 750px; margin: 0 auto; }
+.atelier-pre { font-size: 0.7rem; letter-spacing: 6px; color: #C5A880; display: block; margin-bottom: 10px; text-transform: uppercase; }
+.atelier-title { font-family: 'Cinzel', serif; font-size: 2rem; font-weight: 400; letter-spacing: 4px; margin-bottom: 20px; color: #fff; }
+.atelier-desc { font-size: 0.9rem; font-weight: 200; color: #B5AFAA; line-height: 1.8; text-align: justify; text-align-last: center; }
+
+.section-title { font-family: 'Cinzel', serif; font-size: 1.8rem; letter-spacing: 3px; text-align: center; margin-bottom: 50px; font-weight: 400; color: #fff; }
+
+/* 4. CUADRÍCULA EDITORIAL DE 4 LÍNEAS (BODYS INCLUIDOS) */
+.catalog-visual-grid-four { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.catalog-visual-card { text-align: center; }
+.catalog-photo-box { width: 100%; height: 360px; background-color: #0F0F0F; border: 1px solid #1A1A1A; margin-bottom: 15px; display: flex; align-items: center; justify-content: center; }
+.catalog-visual-card h4 { font-family: 'Cinzel', serif; font-size: 0.95rem; letter-spacing: 2px; font-weight: 400; color: #fff; margin-bottom: 5px; }
+
+.stock-wa-link { display: inline-block; font-size: 0.68rem; letter-spacing: 1px; color: #555; text-decoration: none; text-transform: uppercase; transition: color 0.3s; font-weight: 400; }
+.stock-wa-link:hover { color: #C5A880; }
+
+/* 5. LOS 3 PAQUETES EDITORIALES */
+.packages-editorial-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+.package-editorial-card { background-color: #0F0F0F; border: 1px solid #1A1A1A; padding: 45px 30px; display: flex; flex-direction: column; position: relative; transition: border-color 0.4s; }
+.package-editorial-card:hover { border-color: rgba(197, 168, 128, 0.2); }
+.package-editorial-card.featured { border-color: #C5A880; box-shadow: 0 10px 30px rgba(197, 168, 128, 0.05); }
+.pack-badge { position: absolute; top: -12px; left: 30px; background-color: #C5A880; color: #0A0A0A; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 1px; padding: 4px 12px; font-weight: 600; }
+.pack-num { font-family: 'Cinzel', serif; font-size: 1.6rem; color: rgba(197, 168, 128, 0.15); display: block; margin-bottom: 15px; }
+.package-editorial-card h4 { font-family: 'Cinzel', serif; font-size: 1.2rem; letter-spacing: 1px; margin-bottom: 15px; font-weight: 400; color: #fff; }
+.pack-description { font-size: 0.8rem; font-weight: 200; color: #888; line-height: 1.6; margin-bottom: 25px; }
+.pack-list { list-style: none; margin-bottom: 40px; flex-grow: 1; }
+.pack-list li { font-size: 0.8rem; font-weight: 200; color: #B5AFAA; margin-bottom: 12px; line-height: 1.5; text-align: left; }
+.btn-pack-wa { display: block; text-align: center; text-decoration: none; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; color: #C5A880; border: 1px solid rgba(197, 168, 128, 0.4); padding: 14px 20px; transition: all 0.3s; margin-top: auto; font-family: 'Montserrat', sans-serif; }
+.btn-pack-wa:hover { background-color: #C5A880; color: #0A0A0A; }
+
+/* 6. CREACIONES, TRIBUTOS ($) Y FORMAS DE PAGO */
+.hidden-services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; }
+.service-editorial-box { background-color: #0F0F0F; border: 1px solid #161616; padding: 40px 30px; text-align: center; display: flex; flex-direction: column; justify-content: space-between; align-items: center; transition: all 0.4s ease; }
+.service-editorial-box:hover { border-color: rgba(255,255,255,0.05); }
+.service-editorial-box.gold-accent-box { border: 1px solid rgba(197, 168, 128, 0.15); box-shadow: inset 0 0 20px rgba(197, 168, 128, 0.01); }
+.service-editorial-box.gold-accent-box:hover { border-color: #C5A880; }
+.service-icon { font-size: 1.1rem; color: #444; margin-bottom: 15px; display: block; }
+.gold-accent-box .service-icon { color: #C5A880; }
+.service-editorial-box h4 { font-family: 'Cinzel', serif; font-size: 1.1rem; letter-spacing: 2px; font-weight: 400; margin-bottom: 15px; color: #fff; }
+.service-editorial-box p { font-size: 0.8rem; font-weight: 200; color: #888; line-height: 1.7; margin-bottom: 25px; text-align: justify; text-align-last: center; }
+.service-link { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; color: #888; text-decoration: none; padding-bottom: 4px; border-bottom: 1px solid transparent; transition: all 0.3s ease; margin-top: auto; }
+.service-link:hover { color: #fff; border-bottom-color: #fff; }
+.service-link.gold-text { color: #C5A880; border-bottom-color: rgba(197, 168, 128, 0.2); }
+.payment-badge-text { font-size: 0.65rem; letter-spacing: 1.5px; text-transform: uppercase; color: #444; margin-top: auto; font-weight: 300; }
+
+/* 7. SECCIÓN DE TESTIMONIOS (THE WHISPERS) */
+.whispers-editorial-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+.whisper-quote-card { background-color: #0B0B0B; border-left: 1px solid rgba(197, 168, 128, 0.3); padding: 30px 25px; display: flex; flex-direction: column; justify-content: space-between; }
+.whisper-text { font-size: 0.85rem; font-style: italic; font-weight: 200; line-height: 1.7; color: #C5C4BE; margin-bottom: 20px; text-align: justify; }
+.whisper-author { font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 1px; color: #666; text-transform: uppercase; }
+
+/* 8. DISCRECIÓN Y ENVÍOS */
+.discretion-editorial-box { max-width: 750px; margin: 0 auto; background-color: #0F0F0F; border: 1px solid #1A1A1A; padding: 50px 45px; text-align: center; }
+.discretion-editorial-box .icon { color: #C5A880; display: block; margin-bottom: 15px; }
+.discretion-editorial-box h3 { font-family: 'Cinzel', serif; font-size: 1.3rem; letter-spacing: 2px; margin-bottom: 20px; font-weight: 400; color: #fff; }
+.discretion-editorial-box p { font-size: 0.88rem; font-weight: 200; color: #B5AFAA; line-height: 1.8; text-align: justify; text-align-last: center; margin-bottom: 25px; }
+
+.shipping-partners-labels { display: flex; justify-content: center; align-items: center; gap: 15px; margin-bottom: 25px; font-family: 'Cinzel', serif; font-size: 0.75rem; letter-spacing: 3px; color: #C5A880; font-weight: 400; }
+.separator-dot { color: #333; user-select: none; }
+.discretion-subtext { font-size: 0.8rem; font-weight: 200; color: #666; line-height: 1.6; }
+
+/* FOOTER */
+.atelier-footer { text-align: center; padding-top: 40px; margin-top: 60px; border-top: 1px solid rgba(255,255,255,0.02); font-size: 0.7rem; color: #444; letter-spacing: 1px; }
+
+/* KEYFRAMES */
+@keyframes fadeInFoto { from { opacity: 0; } to { opacity: 0.45; } }
+@keyframes fadeInLento { from { opacity: 0; } to { opacity: 1; } }
+
+/* RESPONSIVO COMPLETO */
+@media (max-width: 900px) {
+    .agatha-split-container { flex-direction: column; height: auto; }
+    .agatha-text-side, .agatha-photo-side { width: 100%; height: auto; padding: 60px 6%; }
+    .agatha-photo-side { height: 450px; padding: 20px; }
+    .catalog-visual-grid-four, .packages-editorial-grid, .hidden-services-grid, .whispers-editorial-grid { grid-template-columns: 1fr; gap: 25px; }
+    .catalog-photo-box { height: 320px; }
+    .main-atelier { padding-top: 90px; }
+    .shipping-partners-labels { flex-direction: column; gap: 10px; }
+    .separator-dot { display: none; }
+}
