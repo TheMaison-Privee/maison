@@ -217,11 +217,27 @@ body {
 @keyframes fadeInFoto { from { opacity: 0; } to { opacity: 0.45; } }
 @keyframes fadeInLento { from { opacity: 0; } to { opacity: 1; } }
 
-/* RESPONSIVO COMPLETO */
+/* RESPONSIVO COMPLETO (CORREGIDO PARA MÓVILES) */
 @media (max-width: 900px) {
-    .agatha-split-container { flex-direction: column; height: auto; }
-    .agatha-text-side, .agatha-photo-side { width: 100%; height: auto; padding: 60px 6%; }
-    .agatha-photo-side { height: 450px; padding: 20px; }
+    .agatha-entrance-screen { 
+        overflow-y: auto; 
+        -webkit-overflow-scrolling: touch; 
+    }
+    .agatha-split-container { 
+        flex-direction: column; 
+        height: auto; 
+        min-height: 100vh;
+    }
+    .agatha-text-side { 
+        width: 100%; 
+        height: auto; 
+        padding: 80px 6% 40px 6%; 
+    }
+    .agatha-photo-side { 
+        width: 100%; 
+        height: 520px; 
+        padding: 10px 6% 60px 6%; 
+    }
     .catalog-visual-grid-four, .packages-editorial-grid, .hidden-services-grid, .whispers-editorial-grid { grid-template-columns: 1fr; gap: 25px; }
     .catalog-photo-box { height: 320px; }
     .main-atelier { padding-top: 90px; }
