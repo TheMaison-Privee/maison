@@ -205,7 +205,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 0 8%;
+    padding: 0 4% 0 8%; /* Reducimos el padding derecho para acercar el texto a la foto */
 }
 
 .agatha-greet {
@@ -251,41 +251,41 @@ body {
 
 
 /* ==========================================================================
-   LADO DERECHO — FOTO DE AGATHA (CENTRADA Y CON MARCO DORADO SUTIL)
+   LADO DERECHO — FOTO DE AGATHA (LAPTOP)
    ========================================================================== */
 
 .agatha-photo-side {
-    width: 50% !important;
-    height: 100vh !important;
-    background-color: #0A0A0A !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    padding: 20px !important;
-    overflow: hidden !important;
+    width: 50%;
+    height: 100vh;
+    background-color: #0A0A0A;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Alinea la foto más cerca del texto */
+    padding-left: 20px;
+    box-sizing: border-box;
+    opacity: 0;
+    animation: fadeInLento 2.5s ease forwards 1s;
 }
 
 .editorial-body-photo {
-    width: 100% !important;
-    max-width: 320px !important; /* Ancho perfecto para no verse gigante ni recortada */
-    height: 80vh !important; /* Limita la altura para que encaje completa */
-    background-color: #0A0A0A !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    border: 1px solid rgba(197, 168, 128, 0.25) !important; /* Borde dorado sutil */
-    margin: 0 auto !important;
-    overflow: hidden !important;
+    width: auto;
+    height: auto;
+    max-width: 380px;
+    max-height: 80vh;
+    border: none; /* Sin marcos ni bordes rígidos */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
 }
 
-.editorial-body-photo img,
 .agatha-back-photo {
-    display: block !important;
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: contain !important; /* Muestra la foto COMPLETA sin cortar */
-    object-position: center !important;
-    margin: 0 auto !important;
+    width: 100%;
+    height: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+    object-position: center;
+    display: block;
 }
 
 
@@ -537,13 +537,15 @@ body {
 
 
 /* ==========================================================================
-   RESPONSIVO MÓVIL
+   RESPONSIVO MÓVIL (CORRECCIÓN DEFINITIVA CELULAR)
    ========================================================================== */
 
 @media (max-width: 900px) {
     .agatha-entrance-screen {
+        position: relative;
+        height: auto;
+        min-height: 100vh;
         overflow-y: auto;
-        -webkit-overflow-scrolling: touch;
     }
 
     .agatha-split-container {
@@ -553,23 +555,30 @@ body {
     }
 
     .agatha-text-side {
-        width: 100%;
-        height: auto;
-        padding: 60px 6% 30px 6%;
+        width: 100% !important;
+        height: auto !important;
+        padding: 60px 8% 30px 8% !important;
     }
 
     .agatha-photo-side {
-        width: 100%;
-        height: 60vh;
-        padding: 0;
+        width: 100% !important;
+        height: auto !important;
+        padding: 0 8% 60px 8% !important;
+        justify-content: center !important;
     }
 
     .editorial-body-photo {
-        width: 100%;
-        max-width: 280px;
-        height: auto;
-        aspect-ratio: 9 / 16;
-        margin: 0 auto;
+        width: 100% !important;
+        max-width: 300px !important;
+        height: auto !important;
+        max-height: none !important; /* Elimina las franjas/marcos negros altos */
+        margin: 0 auto !important;
+    }
+
+    .agatha-back-photo {
+        width: 100% !important;
+        height: auto !important;
+        max-height: 60vh !important;
     }
 
     .catalog-visual-grid-four,
