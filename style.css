@@ -256,7 +256,7 @@ body {
 .package-editorial-card { 
     background-color: #050505; 
     border: 1px solid #1A1A1A; 
-    padding: 30px 20px; 
+    padding: 35px 22px 30px 22px; 
     display: flex; 
     flex-direction: column; 
     justify-content: space-between;
@@ -266,6 +266,7 @@ body {
     min-width: 280px;
     max-width: 350px;
     box-sizing: border-box;
+    text-align: center; /* Alinea todo el contenido al centro */
 }
 
 .package-editorial-card:hover { border-color: rgba(197, 168, 128, 0.3); }
@@ -296,18 +297,48 @@ body {
     font-weight: 400;
 }
 
-.package-editorial-card h4 { font-family: 'Cinzel', serif; font-size: 1.2rem; letter-spacing: 1px; margin-bottom: 15px; font-weight: 400; color: #fff; }
-.pack-description { font-size: 0.8rem; font-weight: 200; color: #888; line-height: 1.6; margin-bottom: 20px; }
+.package-editorial-card h4 { 
+    font-family: 'Cinzel', serif; 
+    font-size: 1.15rem; 
+    letter-spacing: 1px; 
+    margin-bottom: 15px; 
+    font-weight: 400; 
+    color: #fff; 
+    text-align: center;
+}
 
-.pack-list { list-style: none; margin-bottom: 20px; }
-.pack-list li { font-size: 0.82rem; font-weight: 200; color: #B5AFAA; margin-bottom: 10px; line-height: 1.5; text-align: left; }
+.pack-description { 
+    font-size: 0.82rem; 
+    font-weight: 200; 
+    color: #888; 
+    line-height: 1.6; 
+    margin-bottom: 20px; 
+    text-align: center;
+}
 
+.pack-list { 
+    list-style: none; 
+    margin-bottom: 20px; 
+    padding: 0;
+}
+
+.pack-list li { 
+    font-size: 0.82rem; 
+    font-weight: 200; 
+    color: #B5AFAA; 
+    margin-bottom: 10px; 
+    line-height: 1.5; 
+    text-align: center; /* Centra los viñetas y elementos de la lista */
+}
+
+/* NOTA DE PRECIO CURSIVA Y ELEGANTE */
 .pack-price-note {
-    font-size: 0.8rem;
-    color: #d4af37 !important;
-    font-style: italic;
+    font-size: 0.78rem;
+    color: #C5A880 !important; /* Dorado sutil */
+    font-style: italic; /* Cursiva elegante */
+    font-weight: 300;
     line-height: 1.6;
-    text-align: left;
+    text-align: center; /* Centrado */
     margin-top: 15px;
     margin-bottom: 25px;
 }
@@ -332,53 +363,11 @@ body {
     font-family: 'Montserrat', sans-serif; 
     box-sizing: border-box;
 }
-.btn-pack-wa:hover { background-color: #C5A880; color: #0A0A0A; }
 
-.btn-outline {
-    background: transparent;
-    border: 1px solid #444;
+.btn-pack-wa:hover { 
+    background-color: #C5A880; 
+    color: #0A0A0A; 
 }
-
-/* Cierre de la Mansión */
-.section-closing {
-    padding-top: 20px;
-    padding-bottom: 60px;
-}
-
-.text-center { text-align: center; }
-.card-ornament { font-size: 1.2rem; color: #444; margin-bottom: 15px; }
-.card-title { font-size: 1.4rem; margin-bottom: 15px; }
-.card-italic-text { font-style: italic; font-size: 1rem; line-height: 1.6; color: #ccc; }
-.card-muted-text { font-size: 0.95rem; line-height: 1.6; color: #888; margin-bottom: 15px; }
-
-.security-badges {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-bottom: 20px;
-    flex-wrap: wrap;
-    font-size: 0.75rem;
-    letter-spacing: 1px;
-    color: #555;
-    font-weight: bold;
-    text-transform: uppercase;
-}
-
-/* Discreción Absoluta */
-.section-discretion { padding-bottom: 100px; }
-.discretion-wrapper { display: flex; justify-content: center; }
-.discretion-card { width: 100%; max-width: 800px; padding: 40px 30px; text-align: center; }
-.discretion-ornament { font-size: 1.4rem; margin-bottom: 20px; }
-.discretion-title { font-size: 1.6rem; margin-bottom: 25px; letter-spacing: 3px; }
-.discretion-text { font-size: 1.05rem; line-height: 1.8; color: #aaa; margin-bottom: 15px; }
-.highlight-white { color: #fff; font-weight: bold; }
-.discretion-gold-note { font-size: 0.85rem; line-height: 1.5; color: #d4af37; font-style: italic; margin-bottom: 20px; }
-.discretion-packaging { font-size: 1.05rem; line-height: 1.8; color: #888; font-style: italic; margin-top: 25px; border-top: 1px solid #111; padding-top: 20px; }
-
-.usage-days-box { margin-top: 30px; border-top: 1px solid #222; padding-top: 25px; }
-.gold-symbol { color: #d4af37; margin-bottom: 10px; }
-.usage-days-title { font-size: 1.1rem; color: #d4af37; margin-bottom: 15px; letter-spacing: 1px; text-transform: uppercase; }
-.usage-days-desc { font-size: 0.95rem; line-height: 1.7; color: #ccc; }
 
 /* FOOTER */
 .atelier-footer { 
