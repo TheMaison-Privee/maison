@@ -255,39 +255,37 @@ body {
    ========================================================================== */
 
 .agatha-photo-side {
-    width: 50%;
-    height: 100vh;
-    background-color: #0A0A0A;
-    display: flex;
-    align-items: center;
-    justify-content: center; /* Centra el marco horizontalmente */
-    padding: 24px 4%;
-    overflow: hidden;
-    opacity: 0;
-    animation: fadeInLento 2.5s ease forwards 1s;
+    width: 50% !important;
+    height: 100vh !important;
+    background-color: #0A0A0A !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 20px !important;
+    overflow: hidden !important;
 }
 
 .editorial-body-photo {
-    height: calc(100vh - 80px);
-    aspect-ratio: 9 / 16;
-    width: auto;
-    max-width: 380px; /* Tamaño equilibrado para no verse enorme ni diminuta */
-    background-color: #0A0A0A;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid rgba(197, 168, 128, 0.25); /* Contorno dorado sutil */
-    overflow: hidden;
-    margin: 0 auto;
+    width: 100% !important;
+    max-width: 320px !important; /* Ancho perfecto para no verse gigante ni recortada */
+    height: 80vh !important; /* Limita la altura para que encaje completa */
+    background-color: #0A0A0A !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border: 1px solid rgba(197, 168, 128, 0.25) !important; /* Borde dorado sutil */
+    margin: 0 auto !important;
+    overflow: hidden !important;
 }
 
 .editorial-body-photo img,
 .agatha-back-photo {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important; /* Muestra la foto COMPLETA sin cortar */
+    object-position: center !important;
+    margin: 0 auto !important;
 }
 
 
