@@ -1,4 +1,16 @@
-*, *::before, *::after {
+/* ==========================================================================
+   THE MAISON PRIVÉE BY AGATHA
+   STYLE.CSS
+   ========================================================================== */
+
+
+/* ==========================================================================
+   0. RESET GENERAL
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -12,9 +24,17 @@ body {
     background-color: #0A0A0A;
     color: #F5F4F0;
     font-family: 'Montserrat', sans-serif;
+
     overflow-x: hidden;
+
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
+
+
+/* ==========================================================================
+   UTILIDADES
+   ========================================================================== */
 
 .d-none {
     display: none !important;
@@ -26,25 +46,44 @@ body {
 
 
 /* ==========================================================================
-   SELECTOR DE IDIOMA FLOTANTE
+   1. SELECTOR DE IDIOMA
    ========================================================================== */
 
 .lang-nav {
     position: fixed;
+
     top: 30px;
     right: 5%;
+
     z-index: 3000;
+
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
     font-size: 0.75rem;
     letter-spacing: 2px;
+}
+
+.lang-nav span {
+    color: #333;
 }
 
 .lang-btn {
     background: none;
     border: none;
+
     color: #444;
+
     cursor: pointer;
+
     font-family: 'Montserrat', sans-serif;
-    transition: color 0.3s;
+    font-size: inherit;
+    letter-spacing: inherit;
+
+    transition:
+        color 0.3s ease,
+        opacity 0.3s ease;
 }
 
 .lang-btn:hover,
@@ -52,551 +91,1569 @@ body {
     color: #C5A880;
 }
 
+.lang-btn:focus-visible {
+    outline: 1px solid #C5A880;
+    outline-offset: 5px;
+}
+
 
 /* ==========================================================================
-   1. INTRO CINEMATOGRÁFICA
+   2. INTRO CINEMATOGRÁFICA
    ========================================================================== */
 
 .cinema-hero {
     position: relative;
+
     width: 100%;
     height: 100vh;
+    min-height: 100svh;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     text-align: center;
+
     overflow: hidden;
+
+    background-color: #0A0A0A;
 }
+
+
+/* Si utilizas una imagen de fondo en la portada,
+   cambia el nombre del archivo aquí. */
 
 .hero-bg-image {
     position: absolute;
-    top: 0;
-    left: 0;
+
+    inset: 0;
+
     width: 100%;
     height: 100%;
+
     background-image: url('tu-foto-editorial-oscura.jpg');
     background-size: cover;
-    background-position: center;
+    background-position: center center;
+    background-repeat: no-repeat;
+
     opacity: 0;
+
     transform: scale(1.02);
+
     animation: fadeInFoto 2.5s ease forwards 1s;
-    transition: transform 2.5s ease, opacity 1.8s ease;
+
+    transition:
+        transform 2.5s ease,
+        opacity 1.8s ease;
+
     z-index: 1;
 }
 
+
 .hero-overlay {
     position: absolute;
-    top: 0;
-    left: 0;
+
+    inset: 0;
+
     width: 100%;
     height: 100%;
-    background: radial-gradient(
-        circle,
-        rgba(10, 10, 10, 0.6) 0%,
-        rgba(10, 10, 10, 0.95) 100%
-    );
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(10, 10, 10, 0.55) 0%,
+            rgba(10, 10, 10, 0.82) 55%,
+            rgba(10, 10, 10, 0.97) 100%
+        );
+
     z-index: 2;
 }
 
+
 .hero-frame {
     position: relative;
+
     z-index: 3;
-    max-width: 650px;
+
+    width: min(90%, 650px);
+
+    padding: 20px;
 }
+
+
+/* MARCA */
 
 .brand-title {
     font-family: 'Cinzel', serif;
-    font-size: 2.4rem;
+
+    font-size: clamp(1.8rem, 4vw, 2.4rem);
+
     letter-spacing: 10px;
+
     font-weight: 400;
-    opacity: 0;
-    animation: fadeInLento 1.2s ease forwards 0.5s;
+
+    color: #FFFFFF;
+
     margin-bottom: 5px;
-    color: #ffffff;
+
+    opacity: 0;
+
+    animation:
+        fadeInLento 1.2s ease forwards 0.5s;
 }
+
 
 .brand-subtitle {
     font-family: 'Cinzel', serif;
+
     font-size: 1.1rem;
+
     font-style: italic;
-    color: #C5A880;
-    opacity: 0;
-    animation: fadeInLento 1.2s ease forwards 1.2s;
-    margin-bottom: 15px;
     font-weight: 300;
+
+    color: #C5A880;
+
+    margin-bottom: 15px;
+
+    opacity: 0;
+
+    animation:
+        fadeInLento 1.2s ease forwards 1.2s;
 }
+
 
 .brand-tagline {
     font-size: 0.75rem;
+
     letter-spacing: 5px;
+
     color: #888;
+
     text-transform: uppercase;
-    opacity: 0;
-    animation: fadeInLento 1.2s ease forwards 1.7s;
-    margin-bottom: 30px;
+
     font-weight: 200;
+
+    margin-bottom: 30px;
+
+    opacity: 0;
+
+    animation:
+        fadeInLento 1.2s ease forwards 1.7s;
 }
 
+
 .hero-manifesto {
+    max-width: 590px;
+
+    margin:
+        0 auto
+        40px auto;
+
     font-size: 0.85rem;
+
     font-weight: 200;
+
     color: #B5AFAA;
+
     line-height: 1.8;
-    opacity: 0;
-    animation: fadeInLento 1.5s ease forwards 2.2s;
-    margin-bottom: 40px;
+
     text-align: justify;
     text-align-last: center;
+
+    opacity: 0;
+
+    animation:
+        fadeInLento 1.5s ease forwards 2.2s;
 }
+
+
+/* BOTÓN ENTRAR */
 
 .btn-enter {
     background: transparent;
+
     border: 1px solid #C5A880;
+
     color: #C5A880;
+
+    font-family: 'Montserrat', sans-serif;
+
     font-size: 0.8rem;
+
     letter-spacing: 3px;
+
     padding: 15px 38px;
+
     cursor: pointer;
-    opacity: 0;
-    animation: fadeInLento 1.5s ease forwards 3s;
-    transition: all 0.5s ease;
+
     text-transform: uppercase;
+
+    opacity: 0;
+
+    animation:
+        fadeInLento 1.5s ease forwards 3s;
+
+    transition:
+        background-color 0.5s ease,
+        color 0.5s ease,
+        border-color 0.5s ease;
 }
+
 
 .btn-enter:hover {
     background-color: #C5A880;
+
     color: #0A0A0A;
 }
 
+.btn-enter:focus-visible {
+    outline: 1px solid #FFFFFF;
+    outline-offset: 5px;
+}
+
+
+/* EFECTO DE SALIDA */
+
 .cinema-hero.zoom-out-effect .hero-bg-image {
     transform: scale(1.1);
+
     opacity: 0;
 }
 
 .cinema-hero.zoom-out-effect .hero-frame {
     opacity: 0;
+
     transform: translateY(-20px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
 }
 
 
 /* ==========================================================================
-   2. PANTALLA DIVIDIDA (BIENVENIDA + FOTO DE AGATHA)
+   3. PANTALLA DE BIENVENIDA DE AGATHA
    ========================================================================== */
 
 .agatha-entrance-screen {
     position: fixed;
-    top: 0;
-    left: 0;
+
+    inset: 0;
+
     width: 100%;
     height: 100vh;
+
+    min-height: 100svh;
+
     background-color: #0A0A0A;
+
     z-index: 2000;
+
+    overflow: hidden;
 }
+
 
 .agatha-split-container {
     display: flex;
+
     width: 100%;
-    height: 100vh;
-}
-
-.agatha-text-side {
-    width: 50%;
     height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 0 4% 0 8%;
-}
 
-.agatha-greet {
-    font-family: 'Cinzel', serif;
-    font-size: 2.8rem;
-    color: #C5A880;
-    margin-bottom: 20px;
-    opacity: 0;
-    animation: fadeInLento 2s ease forwards 0.5s;
-}
-
-.agatha-text {
-    font-size: 1rem;
-    font-weight: 200;
-    line-height: 1.9;
-    color: #D5D4CE;
-    text-align: justify;
-    opacity: 0;
-    animation: fadeInLento 2s ease forwards 1.4s;
-    margin-bottom: 40px;
-}
-
-.btn-continue {
-    background: none;
-    border: none;
-    font-size: 0.75rem;
-    letter-spacing: 4px;
-    color: #888;
-    cursor: pointer;
-    text-align: left;
-    padding-bottom: 5px;
-    border-bottom: 1px solid transparent;
-    opacity: 0;
-    animation: fadeInLento 1.5s ease forwards 2.5s;
-    transition: color 0.4s;
-    text-transform: uppercase;
-}
-
-.btn-continue:hover {
-    color: #C5A880;
-    border-bottom-color: #C5A880;
+    min-height: 100vh;
 }
 
 
 /* ==========================================================================
-   LADO DERECHO — FOTO DE AGATHA (CON MARCO PASPARTÚ AMPLIO)
+   3.1 TEXTO DE BIENVENIDA
+   ========================================================================== */
+
+.agatha-text-side {
+    width: 50%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding:
+        0
+        4%
+        0
+        8%;
+}
+
+
+.agatha-greet {
+    font-family: 'Cinzel', serif;
+
+    font-size: clamp(2rem, 4vw, 2.8rem);
+
+    color: #C5A880;
+
+    margin-bottom: 20px;
+
+    opacity: 0;
+
+    animation:
+        fadeInLento 2s ease forwards 0.5s;
+}
+
+
+.agatha-text {
+    max-width: 620px;
+
+    font-size: 1rem;
+
+    font-weight: 200;
+
+    line-height: 1.9;
+
+    color: #D5D4CE;
+
+    text-align: justify;
+
+    margin-bottom: 40px;
+
+    opacity: 0;
+
+    animation:
+        fadeInLento 2s ease forwards 1.4s;
+}
+
+
+.btn-continue {
+    width: fit-content;
+
+    background: none;
+
+    border: none;
+    border-bottom: 1px solid transparent;
+
+    color: #888;
+
+    font-family: 'Montserrat', sans-serif;
+
+    font-size: 0.75rem;
+
+    letter-spacing: 4px;
+
+    padding-bottom: 5px;
+
+    cursor: pointer;
+
+    text-align: left;
+
+    text-transform: uppercase;
+
+    opacity: 0;
+
+    animation:
+        fadeInLento 1.5s ease forwards 2.5s;
+
+    transition:
+        color 0.4s ease,
+        border-color 0.4s ease;
+}
+
+
+.btn-continue:hover {
+    color: #C5A880;
+
+    border-bottom-color: #C5A880;
+}
+
+
+.btn-continue:focus-visible {
+    outline: 1px solid #C5A880;
+    outline-offset: 6px;
+}
+
+
+/* ==========================================================================
+   3.2 FOTO DE AGATHA
    ========================================================================== */
 
 .agatha-photo-side {
     width: 50%;
     height: 100vh;
+
+    min-height: 100svh;
+
     background-color: #0A0A0A;
+
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    padding-left: 55px; /* Distancia equilibrada respecto al texto */
-    box-sizing: border-box;
+    justify-content: center;
+
+    padding:
+        28px
+        5%
+        28px
+        3%;
+
     opacity: 0;
-    animation: fadeInLento 2.5s ease forwards 1s;
+
+    animation:
+        fadeInLento 2.5s ease forwards 1s;
+
+    overflow: hidden;
 }
+
+
+/* MARCO EDITORIAL */
 
 .editorial-body-photo {
     width: auto;
     height: auto;
-    max-width: 380px;
-    max-height: 80vh;
-    border: 1px solid rgba(197, 168, 128, 0.35); /* Borde dorado visible y fino */
-    padding: 20px 24px; /* Margen amplio estilo paspartú editorial */
+
+    max-width: min(430px, 100%);
+    max-height: calc(100vh - 56px);
+
+    padding:
+        18px
+        20px;
+
     background-color: #0A0A0A;
+
+    border:
+        1px solid
+        rgba(197, 168, 128, 0.30);
+
+    box-shadow:
+        0 18px 45px
+        rgba(0, 0, 0, 0.55);
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     overflow: hidden;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
 }
 
+
+/* FOTO REAL */
+
 .agatha-back-photo {
-    width: 100%;
-    height: 100%;
-    max-height: 74vh;
-    object-fit: contain;
-    object-position: center;
     display: block;
+
+    width: auto;
+    height: auto;
+
+    max-width: 100%;
+    max-height: calc(100vh - 96px);
+
+    object-fit: contain;
+
+    object-position: center center;
+}
+
+
+/* SALIDA */
+
+.agatha-entrance-screen.fade-out-luxury {
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition:
+        opacity 1.2s ease;
 }
 
 
 /* ==========================================================================
-   3. EL ATELIER Y CONTENIDOS
+   4. ATELIER PRINCIPAL
    ========================================================================== */
 
 .main-atelier {
+    width: 100%;
+
     max-width: 1140px;
+
     margin: 0 auto;
-    padding: 100px 4% 40px 4%;
+
+    padding:
+        100px
+        4%
+        40px
+        4%;
+
     opacity: 0;
-    animation: fadeInLento 1.5s ease forwards;
+
+    animation:
+        fadeInLento 1.5s ease forwards;
 }
+
 
 .atelier-section {
     margin-bottom: 120px;
 }
 
+
+/* ==========================================================================
+   4.1 RECIBIDOR
+   ========================================================================== */
+
 .protocol-box {
-    text-align: center;
     max-width: 750px;
+
     margin: 0 auto;
+
+    text-align: center;
 }
 
+
 .atelier-pre {
-    font-size: 0.7rem;
-    letter-spacing: 6px;
-    color: #C5A880;
     display: block;
+
     margin-bottom: 10px;
+
+    font-size: 0.7rem;
+
+    letter-spacing: 6px;
+
+    color: #C5A880;
+
     text-transform: uppercase;
 }
 
+
 .atelier-title {
     font-family: 'Cinzel', serif;
-    font-size: 2rem;
+
+    font-size: clamp(1.6rem, 3vw, 2rem);
+
     font-weight: 400;
+
     letter-spacing: 4px;
+
     margin-bottom: 20px;
-    color: #fff;
+
+    color: #FFFFFF;
 }
+
 
 .atelier-desc {
     font-size: 0.9rem;
+
     font-weight: 200;
+
     color: #B5AFAA;
+
     line-height: 1.8;
+
     text-align: justify;
     text-align-last: center;
 }
 
+
+/* ==========================================================================
+   TÍTULOS GENERALES
+   ========================================================================== */
+
 .section-title {
     font-family: 'Cinzel', serif;
-    font-size: 1.8rem;
+
+    font-size: clamp(1.45rem, 3vw, 1.8rem);
+
     letter-spacing: 3px;
+
     text-align: center;
+
     margin-bottom: 50px;
+
     font-weight: 400;
-    color: #fff;
+
+    color: #FFFFFF;
 }
 
 
 /* ==========================================================================
-   4. CATÁLOGO VISUAL DE PRODUCTOS
+   5. CATÁLOGO VISUAL
    ========================================================================== */
 
 .catalog-visual-grid-four {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
     gap: 20px;
 }
 
+
 .catalog-visual-card {
+    min-width: 0;
+
     text-align: center;
 }
+
 
 .catalog-photo-box {
     width: 100%;
     height: 360px;
+
     background-color: #0A0A0A;
+
     border: 1px solid #1A1A1A;
+
     margin-bottom: 15px;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     overflow: hidden;
 }
 
+
 .catalog-photo-box img {
+    display: block;
+
     width: 100%;
     height: 100%;
+
     object-fit: contain;
-    object-position: center;
-    display: block;
+
+    object-position: center center;
 }
+
 
 .catalog-visual-card h4 {
     font-family: 'Cinzel', serif;
+
     font-size: 0.95rem;
+
     letter-spacing: 2px;
+
     font-weight: 400;
-    color: #fff;
-    margin-bottom: 5px;
+
+    color: #FFFFFF;
+
+    margin-bottom: 7px;
 }
+
 
 .stock-wa-link {
     display: inline-block;
-    font-size: 0.68rem;
-    letter-spacing: 1px;
+
     color: #555;
-    text-decoration: none;
-    text-transform: uppercase;
-    transition: color 0.3s;
+
+    font-size: 0.68rem;
+
     font-weight: 400;
+
+    letter-spacing: 1px;
+
+    text-decoration: none;
+
+    text-transform: uppercase;
+
+    transition:
+        color 0.3s ease;
 }
+
 
 .stock-wa-link:hover {
     color: #C5A880;
 }
 
 
+.stock-wa-link:focus-visible {
+    color: #C5A880;
+
+    outline: 1px solid #C5A880;
+
+    outline-offset: 4px;
+}
+
+
 /* ==========================================================================
-   5. VÍNCULOS / PAQUETES EDITORIALES
+   6. VÍNCULOS / TARJETAS EDITORIALES
    ========================================================================== */
 
 .packages-editorial-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
     gap: 30px;
+
+    align-items: stretch;
 }
+
 
 .package-editorial-card {
-    background-color: #0A0A0A;
-    border: 1px solid #1A1A1A;
-    padding: 45px 30px;
+    position: relative;
+
+    min-width: 0;
+
+    background-color: #050505;
+
+    border:
+        1px solid
+        #1A1A1A;
+
+    padding:
+        45px
+        30px;
+
     display: flex;
     flex-direction: column;
-    position: relative;
-    transition: border-color 0.4s;
+
+    transition:
+        border-color 0.4s ease,
+        box-shadow 0.4s ease,
+        transform 0.4s ease;
 }
 
+
 .package-editorial-card:hover {
-    border-color: rgba(197, 168, 128, 0.2);
+    border-color:
+        rgba(197, 168, 128, 0.25);
 }
+
 
 .package-editorial-card.featured {
     border-color: #C5A880;
-    box-shadow: 0 10px 30px rgba(197, 168, 128, 0.05);
+
+    box-shadow:
+        0 10px 30px
+        rgba(197, 168, 128, 0.05);
 }
+
+
+/* NÚMERO DEL VÍNCULO */
+
+.pack-num {
+    display: block;
+
+    margin-bottom: 15px;
+
+    font-family: 'Cinzel', serif;
+
+    font-size: 1.6rem;
+
+    color:
+        rgba(197, 168, 128, 0.18);
+}
+
+
+/* BADGE OPCIONAL */
 
 .pack-badge {
     position: absolute;
+
     top: -12px;
-    left: 30px;
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    padding:
+        4px
+        12px;
+
     background-color: #C5A880;
+
     color: #0A0A0A;
+
     font-size: 0.65rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    padding: 4px 12px;
+
     font-weight: 600;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    white-space: nowrap;
 }
 
-.pack-num {
-    font-family: 'Cinzel', serif;
-    font-size: 1.6rem;
-    color: rgba(197, 168, 128, 0.15);
-    display: block;
-    margin-bottom: 15px;
-}
+
+/* TÍTULO DEL VÍNCULO */
 
 .package-editorial-card h4 {
-    font-family: 'Cinzel', serif;
-    font-size: 1.2rem;
-    letter-spacing: 1px;
     margin-bottom: 15px;
+
+    font-family: 'Cinzel', serif;
+
+    font-size: 1.2rem;
+
     font-weight: 400;
-    color: #fff;
+
+    letter-spacing: 1px;
+
+    color: #FFFFFF;
 }
 
+
+/* DESCRIPCIÓN */
+
 .pack-description {
-    font-size: 0.8rem;
-    font-weight: 200;
-    color: #888;
-    line-height: 1.6;
     margin-bottom: 25px;
+
+    font-size: 0.8rem;
+
+    font-weight: 200;
+
+    line-height: 1.65;
+
+    color: #888;
 }
+
+
+/* LISTA */
 
 .pack-list {
     list-style: none;
-    margin-bottom: 40px;
+
+    margin-bottom: 22px;
+
     flex-grow: 1;
 }
 
+
 .pack-list li {
-    font-size: 0.8rem;
-    font-weight: 200;
-    color: #B5AFAA;
     margin-bottom: 12px;
-    line-height: 1.5;
+
+    font-size: 0.8rem;
+
+    font-weight: 200;
+
+    line-height: 1.55;
+
+    color: #B5AFAA;
+
     text-align: left;
 }
 
+
+.pack-list li:last-child {
+    margin-bottom: 0;
+}
+
+
+/* BOTÓN WHATSAPP */
+
 .btn-pack-wa {
     display: block;
-    text-align: center;
-    text-decoration: none;
-    font-size: 0.75rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: #C5A880;
-    border: 1px solid rgba(197, 168, 128, 0.4);
-    padding: 14px 20px;
-    transition: all 0.3s;
+
+    width: 100%;
+
     margin-top: auto;
+
+    padding:
+        14px
+        20px;
+
+    border:
+        1px solid
+        rgba(197, 168, 128, 0.40);
+
+    background-color: transparent;
+
+    color: #C5A880;
+
     font-family: 'Montserrat', sans-serif;
+
+    font-size: 0.75rem;
+
+    letter-spacing: 2px;
+
+    text-align: center;
+
+    text-decoration: none;
+
+    text-transform: uppercase;
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease;
 }
+
 
 .btn-pack-wa:hover {
     background-color: #C5A880;
+
     color: #0A0A0A;
+
+    border-color: #C5A880;
+}
+
+
+.btn-pack-wa:focus-visible {
+    outline:
+        1px solid
+        #FFFFFF;
+
+    outline-offset: 4px;
 }
 
 
 /* ==========================================================================
-   6. SECCIONES FINALES Y FOOTER
+   7. BADGES DE SEGURIDAD
+   ========================================================================== */
+
+.security-badges {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 15px;
+}
+
+
+/* ==========================================================================
+   8. FOOTER
    ========================================================================== */
 
 .atelier-footer {
-    text-align: center;
-    padding-top: 40px;
     margin-top: 60px;
-    border-top: 1px solid rgba(255, 255, 255, 0.02);
-    font-size: 0.7rem;
+
+    padding:
+        40px
+        0
+        20px;
+
+    border-top:
+        1px solid
+        rgba(255, 255, 255, 0.03);
+
     color: #444;
+
+    font-size: 0.7rem;
+
     letter-spacing: 1px;
-}
 
-@keyframes fadeInFoto {
-    from { opacity: 0; }
-    to { opacity: 0.45; }
-}
-
-@keyframes fadeInLento {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    text-align: center;
 }
 
 
 /* ==========================================================================
-   RESPONSIVO MÓVIL (MARCO VISIBLE Y DEFINIDO EN MÓVILES)
+   9. ANIMACIONES
+   ========================================================================== */
+
+@keyframes fadeInFoto {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 0.45;
+    }
+
+}
+
+
+@keyframes fadeInLento {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+
+}
+
+
+/* ==========================================================================
+   10. LAPTOPS / TABLETS GRANDES
+   ========================================================================== */
+
+@media (max-width: 1100px) {
+
+    .main-atelier {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+
+    .catalog-visual-grid-four {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+
+    .catalog-photo-box {
+        height: 390px;
+    }
+
+
+    .agatha-text-side {
+        padding-left: 6%;
+        padding-right: 3%;
+    }
+
+
+    .agatha-photo-side {
+        padding-left: 2%;
+        padding-right: 4%;
+    }
+
+
+    .editorial-body-photo {
+        max-width: 390px;
+    }
+
+}
+
+
+/* ==========================================================================
+   11. LAPTOPS CON POCA ALTURA
+   ========================================================================== */
+
+@media (min-width: 901px) and (max-height: 760px) {
+
+    .agatha-text-side {
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
+
+
+    .agatha-greet {
+        font-size: 2.2rem;
+
+        margin-bottom: 14px;
+    }
+
+
+    .agatha-text {
+        font-size: 0.9rem;
+
+        line-height: 1.7;
+
+        margin-bottom: 25px;
+    }
+
+
+    .agatha-photo-side {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+
+    .editorial-body-photo {
+        max-height:
+            calc(100vh - 40px);
+
+        padding:
+            14px
+            16px;
+    }
+
+
+    .agatha-back-photo {
+        max-height:
+            calc(100vh - 70px);
+    }
+
+}
+
+
+/* ==========================================================================
+   12. TABLETS Y MÓVILES
    ========================================================================== */
 
 @media (max-width: 900px) {
-    .agatha-entrance-screen {
-        position: relative;
-        height: auto;
-        min-height: 100vh;
-        overflow-y: auto;
+
+    /* --------------------------------------------------------------
+       HERO
+       -------------------------------------------------------------- */
+
+    .cinema-hero {
+        min-height: 100svh;
     }
+
+
+    .hero-frame {
+        width: min(92%, 600px);
+
+        padding:
+            90px
+            20px
+            40px;
+    }
+
+
+    .brand-title {
+        font-size: clamp(1.65rem, 7vw, 2.2rem);
+
+        letter-spacing: 6px;
+    }
+
+
+    .brand-subtitle {
+        font-size: 1rem;
+    }
+
+
+    .brand-tagline {
+        letter-spacing: 3px;
+    }
+
+
+    .hero-manifesto {
+        font-size: 0.82rem;
+    }
+
+
+    /* --------------------------------------------------------------
+       PANTALLA AGATHA
+       -------------------------------------------------------------- */
+
+    .agatha-entrance-screen {
+        position: fixed;
+
+        inset: 0;
+
+        width: 100%;
+        height: 100%;
+
+        overflow-y: auto;
+
+        -webkit-overflow-scrolling: touch;
+    }
+
 
     .agatha-split-container {
         flex-direction: column;
+
         height: auto;
-        min-height: 100vh;
+
+        min-height: 100%;
     }
+
 
     .agatha-text-side {
-        width: 100% !important;
-        height: auto !important;
-        padding: 60px 8% 30px 8% !important;
+        width: 100%;
+
+        height: auto;
+
+        min-height: auto;
+
+        padding:
+            90px
+            8%
+            35px
+            8%;
     }
+
+
+    .agatha-greet {
+        font-size: 2.2rem;
+    }
+
+
+    .agatha-text {
+        max-width: none;
+
+        font-size: 0.94rem;
+
+        line-height: 1.8;
+
+        margin-bottom: 30px;
+    }
+
+
+    .btn-continue {
+        font-size: 0.7rem;
+
+        letter-spacing: 3px;
+    }
+
+
+    /* --------------------------------------------------------------
+       FOTO AGATHA
+       -------------------------------------------------------------- */
 
     .agatha-photo-side {
-        width: 100% !important;
-        height: auto !important;
-        padding: 0 8% 60px 8% !important;
-        justify-content: center !important;
+        width: 100%;
+
+        height: auto;
+
+        min-height: 0;
+
+        padding:
+            5px
+            8%
+            60px;
+
+        justify-content: center;
+
+        overflow: visible;
     }
+
 
     .editorial-body-photo {
-        width: 100% !important;
-        max-width: 300px !important;
-        height: auto !important;
-        max-height: none !important;
-        margin: 0 auto !important;
-        padding: 14px 16px !important; /* Espaciado interno para visibilidad en cel */
-        border: 1px solid rgba(197, 168, 128, 0.4) !important; /* Mayor contraste para pantalla móvil */
+        width: auto;
+        height: auto;
+
+        max-width: min(340px, 100%);
+
+        max-height: none;
+
+        margin: 0 auto;
+
+        padding:
+            14px
+            16px;
+
+        border:
+            1px solid
+            rgba(197, 168, 128, 0.35);
     }
+
 
     .agatha-back-photo {
-        width: 100% !important;
-        height: auto !important;
-        max-height: 55vh !important;
+        width: auto;
+        height: auto;
+
+        max-width: 100%;
+        max-height: none;
+
+        object-fit: contain;
     }
 
-    .catalog-visual-grid-four,
-    .packages-editorial-grid {
-        grid-template-columns: 1fr;
-        gap: 25px;
+
+    /* --------------------------------------------------------------
+       ATELIER
+       -------------------------------------------------------------- */
+
+    .main-atelier {
+        padding:
+            90px
+            6%
+            30px;
     }
+
+
+    .atelier-section {
+        margin-bottom: 90px;
+    }
+
+
+    .atelier-title {
+        letter-spacing: 3px;
+    }
+
+
+    .atelier-desc {
+        text-align: left;
+
+        text-align-last: left;
+    }
+
+
+    /* --------------------------------------------------------------
+       CATÁLOGO
+       -------------------------------------------------------------- */
+
+    .catalog-visual-grid-four {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 20px;
+    }
+
 
     .catalog-photo-box {
         height: 320px;
     }
 
-    .main-atelier {
-        padding-top: 90px;
+
+    /* --------------------------------------------------------------
+       VÍNCULOS
+       -------------------------------------------------------------- */
+
+    .packages-editorial-grid {
+        grid-template-columns: 1fr;
+
+        gap: 25px;
     }
+
+
+    .package-editorial-card {
+        width: 100%;
+
+        max-width: none;
+    }
+
+}
+
+
+/* ==========================================================================
+   13. MÓVILES
+   ========================================================================== */
+
+@media (max-width: 600px) {
+
+    .lang-nav {
+        top: 20px;
+
+        right: 6%;
+    }
+
+
+    .hero-frame {
+        padding-top: 80px;
+    }
+
+
+    .brand-title {
+        font-size: 1.65rem;
+
+        letter-spacing: 4px;
+    }
+
+
+    .brand-subtitle {
+        font-size: 0.95rem;
+    }
+
+
+    .brand-tagline {
+        font-size: 0.67rem;
+
+        letter-spacing: 2.5px;
+    }
+
+
+    .hero-manifesto {
+        font-size: 0.78rem;
+
+        line-height: 1.7;
+
+        text-align: center;
+    }
+
+
+    .btn-enter {
+        width: 100%;
+
+        max-width: 290px;
+
+        padding:
+            14px
+            20px;
+
+        font-size: 0.72rem;
+    }
+
+
+    /* BIENVENIDA */
+
+    .agatha-text-side {
+        padding:
+            75px
+            7%
+            30px;
+    }
+
+
+    .agatha-greet {
+        font-size: 1.9rem;
+    }
+
+
+    .agatha-text {
+        font-size: 0.88rem;
+
+        line-height: 1.75;
+
+        text-align: left;
+    }
+
+
+    .agatha-photo-side {
+        padding:
+            5px
+            7%
+            50px;
+    }
+
+
+    .editorial-body-photo {
+        max-width: 300px;
+
+        padding:
+            12px
+            14px;
+    }
+
+
+    /* ATELIER */
+
+    .main-atelier {
+        padding:
+            75px
+            5%
+            25px;
+    }
+
+
+    .atelier-section {
+        margin-bottom: 75px;
+    }
+
+
+    .atelier-pre {
+        font-size: 0.62rem;
+
+        letter-spacing: 4px;
+    }
+
+
+    .atelier-title {
+        font-size: 1.45rem;
+
+        letter-spacing: 2px;
+    }
+
+
+    .section-title {
+        font-size: 1.4rem;
+
+        letter-spacing: 2px;
+
+        margin-bottom: 35px;
+    }
+
+
+    /* CATÁLOGO EN UNA COLUMNA */
+
+    .catalog-visual-grid-four {
+        grid-template-columns: 1fr;
+
+        gap: 28px;
+    }
+
+
+    .catalog-photo-box {
+        width: 100%;
+
+        height: auto;
+
+        aspect-ratio: 4 / 5;
+    }
+
+
+    .catalog-photo-box img {
+        object-fit: contain;
+    }
+
+
+    /* VÍNCULOS */
+
+    .package-editorial-card {
+        padding:
+            30px
+            20px !important;
+    }
+
+
+    .package-editorial-card h4 {
+        font-size: 1.05rem;
+    }
+
+
+    .pack-description {
+        font-size: 0.78rem;
+
+        line-height: 1.6;
+    }
+
+
+    .pack-list li {
+        font-size: 0.78rem;
+    }
+
+
+    .btn-pack-wa {
+        font-size: 0.7rem;
+
+        letter-spacing: 1.5px;
+
+        padding:
+            13px
+            14px;
+    }
+
+
+    .security-badges {
+        gap: 10px;
+    }
+
+
+    .atelier-footer {
+        margin-top: 35px;
+
+        font-size: 0.65rem;
+    }
+
+}
+
+
+/* ==========================================================================
+   14. MÓVILES MUY PEQUEÑOS
+   ========================================================================== */
+
+@media (max-width: 380px) {
+
+    .brand-title {
+        font-size: 1.45rem;
+
+        letter-spacing: 3px;
+    }
+
+
+    .brand-tagline {
+        letter-spacing: 2px;
+    }
+
+
+    .agatha-text-side {
+        padding-left: 6%;
+        padding-right: 6%;
+    }
+
+
+    .editorial-body-photo {
+        max-width: 270px;
+    }
+
+
+    .main-atelier {
+        padding-left: 4%;
+        padding-right: 4%;
+    }
+
+}
+
+
+/* ==========================================================================
+   15. ACCESIBILIDAD: REDUCIR MOVIMIENTO
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
 }
