@@ -102,20 +102,49 @@
 
 
     <!-- =========================================================
-         ESTANCIA 2: BIENVENIDA DE AGATHA
+         ESTANCIA 2: BIENVENIDA DE AGATHA (CORREGIDA)
          ========================================================= -->
 
     <section
         class="agatha-entrance-screen d-none-flex"
         id="agatha-screen"
+        style="
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: #0a0a0a;
+            z-index: 2000;
+            overflow: hidden;
+        "
     >
 
-        <div class="agatha-split-container">
+        <div
+            class="agatha-split-container"
+            style="
+                display: flex;
+                width: 100%;
+                height: 100%;
+                box-sizing: border-box;
+            "
+        >
 
 
-            <!-- TEXTO -->
+            <!-- COLUMNA IZQUIERDA: TEXTO -->
 
-            <div class="agatha-text-side">
+            <div
+                class="agatha-text-side"
+                style="
+                    width: 50%;
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    padding: 0 6%;
+                    box-sizing: border-box;
+                "
+            >
 
                 <p class="agatha-greet lang-es">
                     HOLA...
@@ -160,19 +189,31 @@
             </div>
 
 
-            <!-- FOTO -->
+            <!-- COLUMNA DERECHA: FOTO -->
 
-            <div class="agatha-photo-side">
+            <div
+                class="agatha-photo-side"
+                style="
+                    width: 50%;
+                    height: 100%;
+                    position: relative;
+                    overflow: hidden;
+                    box-sizing: border-box;
+                "
+            >
 
-                <div class="editorial-body-photo">
-
-                    <img
-                        src="1.2.jpeg"
-                        alt="Silueta sensual de perfil Agatha"
-                        class="agatha-back-photo"
-                    >
-
-                </div>
+                <img
+                    src="1.2.jpeg"
+                    alt="Silueta sensual de perfil Agatha"
+                    class="agatha-back-photo"
+                    style="
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        object-position: center center;
+                        display: block;
+                    "
+                >
 
             </div>
 
