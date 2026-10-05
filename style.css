@@ -154,38 +154,42 @@ body {
     border-bottom-color: #C5A880; 
 }
 
-/* CORRECCIÓN DE LA FOTO Y SU CONTENEDOR */
+/* MARCO Y TAMAÑO DE FOTO CONTROLADO */
 .agatha-photo-side {
     width: 50%;
     height: 100%;
-    background-color: #0A0A0A;
-    padding: 0;
+    background-color: #0F0F0F;
+    padding: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
     opacity: 0;
     animation: fadeInLento 2.5s ease forwards 1s;
-    overflow: hidden;
+    box-sizing: border-box;
 }
 
 .editorial-body-photo {
     width: 100%;
-    height: 100%;
+    max-width: 420px;
+    height: 70vh;
+    max-height: 580px;
+    background-color: #0A0A0A;
+    border: 1px solid rgba(197, 168, 128, 0.2);
     display: flex;
     align-items: center;
     justify-content: center;
-    border: none;
+    overflow: hidden;
+    box-sizing: border-box;
 }
 
 .editorial-body-photo img,
 .agatha-back-photo {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    object-position: center center;
+    object-fit: cover !important;
+    object-position: center top !important;
     display: block;
 }
-
 /* ==========================================================================
    3. ATELIER PRINCIPAL
    ========================================================================== */
