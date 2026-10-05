@@ -251,31 +251,34 @@ body {
 
 
 /* ==========================================================================
-   LADO DERECHO — FOTO DE AGATHA (SIN MARCOS CAFÉS NI PEQUEÑA)
+   LADO DERECHO — FOTO DE AGATHA (CENTRADA Y CON MARCO DORADO SUTIL)
    ========================================================================== */
 
 .agatha-photo-side {
     width: 50%;
     height: 100vh;
-    background-color: #0A0A0A; /* Fondo negro puro */
+    background-color: #0A0A0A;
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding: 0;
+    justify-content: center; /* Centra el marco horizontalmente */
+    padding: 24px 4%;
     overflow: hidden;
     opacity: 0;
     animation: fadeInLento 2.5s ease forwards 1s;
 }
 
 .editorial-body-photo {
-    width: 100%;
-    height: 100vh;
-    background-color: #0A0A0A; /* Fondo negro puro */
+    height: calc(100vh - 80px);
+    aspect-ratio: 9 / 16;
+    width: auto;
+    max-width: 380px; /* Tamaño equilibrado para no verse enorme ni diminuta */
+    background-color: #0A0A0A;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: none; /* Sin borde para eliminar el marco */
+    border: 1px solid rgba(197, 168, 128, 0.25); /* Contorno dorado sutil */
     overflow: hidden;
+    margin: 0 auto;
 }
 
 .editorial-body-photo img,
@@ -283,11 +286,8 @@ body {
     display: block;
     width: 100%;
     height: 100%;
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: cover; /* Cubre todo el espacio del panel derecho */
+    object-fit: cover;
     object-position: center;
-    margin: 0;
 }
 
 
@@ -566,9 +566,12 @@ body {
         padding: 0;
     }
 
-    .editorial-body-photo img,
-    .agatha-back-photo {
-        object-fit: cover;
+    .editorial-body-photo {
+        width: 100%;
+        max-width: 280px;
+        height: auto;
+        aspect-ratio: 9 / 16;
+        margin: 0 auto;
     }
 
     .catalog-visual-grid-four,
