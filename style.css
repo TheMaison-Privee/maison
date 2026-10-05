@@ -85,7 +85,7 @@ body {
 .cinema-hero.zoom-out-effect .hero-frame { opacity: 0; transform: translateY(-20px); }
 
 /* ==========================================================================
-   2. PANTALLA DIVIDIDA (BIENVENIDA + TU SILUETA)
+   2. PANTALLA DIVIDIDA (BIENVENIDA + TU SILUETA) - CORREGIDA
    ========================================================================== */
 .agatha-entrance-screen {
     position: fixed;
@@ -121,18 +121,30 @@ body {
     opacity: 0;
     animation: fadeInLento 2.5s ease forwards 1s;
 }
+
+/* AJUSTE EDITORIAL: Muestra la foto entera sin recortes y respetando proporciones */
 .editorial-body-photo {
     width: 100%;
     height: 100%;
-    background-color: #141414;
-    background-size: cover;
+    background-color: #0A0A0A;
+    background-size: contain; /* Cambiado a contain para evitar recortes en laptop */
     background-position: center;
+    background-repeat: no-repeat;
     border: 1px solid rgba(197, 168, 128, 0.1);
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 20px;
 }
+
+/* Si usas la etiqueta <img> dentro de .editorial-body-photo */
+.editorial-body-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
 .photo-label {
     font-family: 'Cinzel', serif;
     font-size: 0.75rem;
@@ -169,10 +181,9 @@ body {
     display: flex; 
     align-items: center; 
     justify-content: center; 
-    overflow: hidden; /* Mantiene la imagen dentro de la tarjeta */
+    overflow: hidden;
 }
 
-/* REGLA AJUSTADA: La imagen llena todo el contenedor sin deformarse */
 .catalog-photo-box img {
     width: 100%;
     height: 100%;
@@ -238,7 +249,9 @@ body {
 @keyframes fadeInFoto { from { opacity: 0; } to { opacity: 0.45; } }
 @keyframes fadeInLento { from { opacity: 0; } to { opacity: 1; } }
 
-/* RESPONSIVO COMPLETO (CORREGIDO PARA MÓVILES) */
+/* ==========================================================================
+   RESPONSIVO COMPLETO (MÓVILES Y TABLETS)
+   ========================================================================== */
 @media (max-width: 900px) {
     .agatha-entrance-screen { 
         overflow-y: auto; 
@@ -252,12 +265,18 @@ body {
     .agatha-text-side { 
         width: 100%; 
         height: auto; 
-        padding: 80px 6% 40px 6%; 
+        padding: 60px 6% 30px 6%; 
     }
     .agatha-photo-side { 
         width: 100%; 
-        height: 520px; 
-        padding: 10px 6% 60px 6%; 
+        /* Se adapta dinámicamente según la pantalla para no verse alejada */
+        height: 65vh; 
+        min-height: 400px;
+        max-height: 600px;
+        padding: 10px 6% 40px 6%; 
+    }
+    .editorial-body-photo {
+        padding: 10px;
     }
     .catalog-visual-grid-four, .packages-editorial-grid, .hidden-services-grid, .whispers-editorial-grid { grid-template-columns: 1fr; gap: 25px; }
     .catalog-photo-box { height: 320px; }
