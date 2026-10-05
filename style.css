@@ -85,7 +85,7 @@ body {
 .cinema-hero.zoom-out-effect .hero-frame { opacity: 0; transform: translateY(-20px); }
 
 /* ==========================================================================
-   2. PANTALLA DIVIDIDA (BIENVENIDA + SILUETA)
+   2. PANTALLA DIVIDIDA (BIENVENIDA DE AGATHA)
    ========================================================================== */
 .agatha-entrance-screen {
     position: fixed;
@@ -102,15 +102,18 @@ body {
     width: 100%;
     height: 100vh;
     align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 4%;
 }
 
 .agatha-text-side {
     width: 50%;
-    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 0 8%;
+    padding-right: 5%;
     box-sizing: border-box;
 }
 
@@ -124,14 +127,14 @@ body {
 }
 
 .agatha-text { 
-    font-size: 1rem; 
+    font-size: 0.95rem; 
     font-weight: 200; 
     line-height: 1.9; 
     color: #D5D4CE; 
     text-align: justify; 
     opacity: 0; 
     animation: fadeInLento 2s ease forwards 1.4s; 
-    margin-bottom: 40px; 
+    margin-bottom: 30px; 
 }
 
 .btn-continue { 
@@ -155,15 +158,12 @@ body {
     border-bottom-color: #C5A880; 
 }
 
-/* MARCO Y FOTO CONTROLADOS */
+/* FOTO VERTICAL CON BORDE DORADO MÁS CERCA DEL TEXTO */
 .agatha-photo-side {
-    width: 50%;
-    height: 100%;
-    background-color: #0F0F0F;
-    padding: 40px;
+    width: 45%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     opacity: 0;
     animation: fadeInLento 2.5s ease forwards 1s;
     box-sizing: border-box;
@@ -171,19 +171,16 @@ body {
 
 .editorial-body-photo {
     width: 100%;
-    max-width: 380px;
-    height: 65vh;
-    max-height: 520px;
+    max-width: 320px;
+    height: 70vh;
+    max-height: 500px;
     background-color: #0A0A0A;
-    border: 1px solid rgba(197, 168, 128, 0.2);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
+    border: 1px solid #C5A880; /* Contorno dorado */
+    padding: 10px;            /* Borde interno estilo marco */
     box-sizing: border-box;
+    box-shadow: 0 0 25px rgba(197, 168, 128, 0.15); /* Sombra dorada tenue */
 }
 
-.editorial-body-photo img,
 .agatha-back-photo {
     width: 100%;
     height: 100%;
@@ -191,7 +188,6 @@ body {
     object-position: center top !important;
     display: block;
 }
-
 /* ==========================================================================
    3. ATELIER PRINCIPAL
    ========================================================================== */
@@ -235,232 +231,17 @@ body {
 .stock-wa-link { display: inline-block; font-size: 0.68rem; letter-spacing: 1px; color: #555; text-decoration: none; text-transform: uppercase; transition: color 0.3s; font-weight: 400; }
 .stock-wa-link:hover { color: #C5A880; }
 
-/* ==========================================================================
-   5. VÍNCULOS EDITORIALES & SECCIONES ESPECIALES
+5. VÍNCULOS EDITORIALES (ESTILO DE PRECIO EN DORADO)
    ========================================================================== */
-.section-bonds {
-    padding-top: 40px;
-    padding-bottom: 40px;
-}
-
-.bonds-header {
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.bonds-header .section-title {
-    font-size: 1.8rem;
-    margin: 0;
-    text-transform: none;
-}
-
-.packages-editorial-grid { 
-    display: flex; 
-    flex-wrap: wrap; 
-    gap: 20px; 
-    justify-content: center; 
-    align-items: stretch; 
-}
-
-.package-editorial-card { 
-    background-color: #050505; 
-    border: 1px solid #1A1A1A; 
-    padding: 30px 20px; 
-    display: flex; 
-    flex-direction: column; 
-    justify-content: space-between;
-    position: relative; 
-    transition: border-color 0.4s; 
-    flex: 1;
-    min-width: 280px;
-    max-width: 350px;
-    box-sizing: border-box;
-}
-
-.package-editorial-card:hover { border-color: rgba(197, 168, 128, 0.3); }
-.package-editorial-card.featured { border-color: #C5A880; box-shadow: 0 10px 30px rgba(197, 168, 128, 0.05); }
-
-.pack-num { 
-    font-family: 'Cinzel', serif; 
-    font-size: 1.6rem; 
-    color: rgba(197, 168, 128, 0.4); 
-    display: block; 
-    margin-bottom: 10px; 
-}
-
-.package-editorial-card h4 { font-family: 'Cinzel', serif; font-size: 1.2rem; letter-spacing: 1px; margin-bottom: 15px; font-weight: 400; color: #fff; }
-.pack-description { font-size: 0.8rem; font-weight: 200; color: #888; line-height: 1.6; margin-bottom: 20px; }
-
-.pack-list { list-style: none; margin-bottom: 20px; }
-.pack-list li { font-size: 0.82rem; font-weight: 200; color: #B5AFAA; margin-bottom: 10px; line-height: 1.5; text-align: left; }
-
 .pack-price-note {
-    font-size: 0.78rem;
-    color: #d4af37;
+    font-size: 0.8rem;
+    color: #d4af37 !important; /* Dorado destacado */
     font-style: italic;
-    line-height: 1.5;
-    text-align: justify;
+    line-height: 1.6;
+    text-align: left;
+    margin-top: 15px;
     margin-bottom: 25px;
 }
-
-.pack-action-container {
-    margin-top: auto;
-    padding-top: 20px;
-}
-
-.btn-pack-wa { 
-    display: block; 
-    width: 100%;
-    text-align: center; 
-    text-decoration: none; 
-    font-size: 0.72rem; 
-    letter-spacing: 2px; 
-    text-transform: uppercase; 
-    color: #C5A880; 
-    border: 1px solid rgba(197, 168, 128, 0.4); 
-    padding: 14px 20px; 
-    transition: all 0.3s; 
-    font-family: 'Montserrat', sans-serif; 
-    box-sizing: border-box;
-}
-.btn-pack-wa:hover { background-color: #C5A880; color: #0A0A0A; }
-
-.btn-outline {
-    background: transparent;
-    border: 1px solid #444;
-}
-
-/* Cierre de la Mansión */
-.section-closing {
-    padding-top: 20px;
-    padding-bottom: 60px;
-}
-
-.text-center {
-    text-align: center;
-}
-
-.card-ornament {
-    font-size: 1.2rem;
-    color: #444;
-    margin-bottom: 15px;
-}
-
-.card-title {
-    font-size: 1.4rem;
-    margin-bottom: 15px;
-}
-
-.card-italic-text {
-    font-style: italic;
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #ccc;
-}
-
-.card-muted-text {
-    font-size: 0.95rem;
-    line-height: 1.6;
-    color: #888;
-    margin-bottom: 15px;
-}
-
-.security-badges {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-bottom: 20px;
-    flex-wrap: wrap;
-    font-size: 0.75rem;
-    letter-spacing: 1px;
-    color: #555;
-    font-weight: bold;
-    text-transform: uppercase;
-}
-
-/* Discreción Absoluta */
-.section-discretion {
-    padding-bottom: 100px;
-}
-
-.discretion-wrapper {
-    display: flex;
-    justify-content: center;
-}
-
-.discretion-card {
-    width: 100%;
-    max-width: 800px;
-    padding: 40px 30px;
-    text-align: center;
-}
-
-.discretion-ornament {
-    font-size: 1.4rem;
-    margin-bottom: 20px;
-}
-
-.discretion-title {
-    font-size: 1.6rem;
-    margin-bottom: 25px;
-    letter-spacing: 3px;
-}
-
-.discretion-text {
-    font-size: 1.05rem;
-    line-height: 1.8;
-    color: #aaa;
-    margin-bottom: 15px;
-}
-
-.highlight-white {
-    color: #fff;
-    font-weight: bold;
-}
-
-.discretion-gold-note {
-    font-size: 0.85rem;
-    line-height: 1.5;
-    color: #d4af37;
-    font-style: italic;
-    margin-bottom: 20px;
-}
-
-.discretion-packaging {
-    font-size: 1.05rem;
-    line-height: 1.8;
-    color: #888;
-    font-style: italic;
-    margin-top: 25px;
-    border-top: 1px solid #111;
-    padding-top: 20px;
-}
-
-.usage-days-box {
-    margin-top: 30px;
-    border-top: 1px solid #222;
-    padding-top: 25px;
-}
-
-.gold-symbol {
-    color: #d4af37;
-    margin-bottom: 10px;
-}
-
-.usage-days-title {
-    font-size: 1.1rem;
-    color: #d4af37;
-    margin-bottom: 15px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-}
-
-.usage-days-desc {
-    font-size: 0.95rem;
-    line-height: 1.7;
-    color: #ccc;
-}
-
 /* FOOTER */
 .atelier-footer { 
     text-align: center; 
