@@ -205,7 +205,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 0 4% 0 8%; /* Reducimos el padding derecho para acercar el texto a la foto */
+    padding: 0 4% 0 8%;
 }
 
 .agatha-greet {
@@ -251,7 +251,7 @@ body {
 
 
 /* ==========================================================================
-   LADO DERECHO — FOTO DE AGATHA (LAPTOP)
+   LADO DERECHO — FOTO DE AGATHA (CON MARCO DORADO ORIGINAL)
    ========================================================================== */
 
 .agatha-photo-side {
@@ -260,8 +260,8 @@ body {
     background-color: #0A0A0A;
     display: flex;
     align-items: center;
-    justify-content: flex-start; /* Alinea la foto más cerca del texto */
-    padding-left: 20px;
+    justify-content: flex-start;
+    padding-left: 50px; /* Ligeramente hacia la derecha */
     box-sizing: border-box;
     opacity: 0;
     animation: fadeInLento 2.5s ease forwards 1s;
@@ -270,9 +270,11 @@ body {
 .editorial-body-photo {
     width: auto;
     height: auto;
-    max-width: 380px;
+    max-width: 360px;
     max-height: 80vh;
-    border: none; /* Sin marcos ni bordes rígidos */
+    border: 1px solid rgba(197, 168, 128, 0.25); /* Marco fino dorado original */
+    padding: 10px; /* Acolchado elegante para enmarcar */
+    background-color: #0A0A0A;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -282,7 +284,7 @@ body {
 .agatha-back-photo {
     width: 100%;
     height: 100%;
-    max-height: 80vh;
+    max-height: 78vh;
     object-fit: contain;
     object-position: center;
     display: block;
@@ -537,7 +539,7 @@ body {
 
 
 /* ==========================================================================
-   RESPONSIVO MÓVIL (CORRECCIÓN DEFINITIVA CELULAR)
+   RESPONSIVO MÓVIL
    ========================================================================== */
 
 @media (max-width: 900px) {
@@ -569,10 +571,11 @@ body {
 
     .editorial-body-photo {
         width: 100% !important;
-        max-width: 300px !important;
+        max-width: 290px !important;
         height: auto !important;
-        max-height: none !important; /* Elimina las franjas/marcos negros altos */
+        max-height: none !important;
         margin: 0 auto !important;
+        padding: 8px !important;
     }
 
     .agatha-back-photo {
