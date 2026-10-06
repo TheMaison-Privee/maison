@@ -217,12 +217,14 @@ body {
     align-items: center; 
     justify-content: center; 
     overflow: hidden;
+    padding: 12px;
+    box-sizing: border-box;
 }
 
 .catalog-photo-box img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain !important;
     object-position: center;
     display: block;
 }
@@ -266,7 +268,7 @@ body {
     min-width: 280px;
     max-width: 350px;
     box-sizing: border-box;
-    text-align: center; /* Alinea todo el contenido al centro */
+    text-align: center;
 }
 
 .package-editorial-card:hover { border-color: rgba(197, 168, 128, 0.3); }
@@ -328,17 +330,17 @@ body {
     color: #B5AFAA; 
     margin-bottom: 10px; 
     line-height: 1.5; 
-    text-align: center; /* Centra los viñetas y elementos de la lista */
+    text-align: center;
 }
 
 /* NOTA DE PRECIO CURSIVA Y ELEGANTE */
 .pack-price-note {
     font-size: 0.78rem;
-    color: #C5A880 !important; /* Dorado sutil */
-    font-style: italic; /* Cursiva elegante */
+    color: #C5A880 !important;
+    font-style: italic;
     font-weight: 300;
     line-height: 1.6;
-    text-align: center; /* Centrado */
+    text-align: center;
     margin-top: 15px;
     margin-bottom: 25px;
 }
@@ -389,7 +391,7 @@ body {
 
 .discretion-card { 
     width: 100%; 
-    max-width: 750px; /* Ancho amplio centrado */
+    max-width: 750px;
     margin: 0 auto;
     padding: 40px 30px; 
     text-align: center; 
@@ -429,7 +431,7 @@ body {
 .discretion-gold-note { 
     font-size: 0.85rem; 
     line-height: 1.6; 
-    color: #d4af37 !important; /* Dorado de realce */
+    color: #d4af37 !important;
     font-style: italic; 
     margin-top: 15px;
     margin-bottom: 25px; 
@@ -536,4 +538,11 @@ body {
     }
     .catalog-photo-box { height: 320px; }
     .main-atelier { padding-top: 90px; }
+}
+
+/* Ajuste específico para celulares en horizontal */
+@media (max-width: 900px) and (orientation: landscape) {
+    .catalog-photo-box {
+        height: 60vh;
+    }
 }
