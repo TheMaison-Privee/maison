@@ -369,6 +369,109 @@ body {
     color: #0A0A0A; 
 }
 
+/* ==========================================================================
+   6. DISCRECIÓN ABSOLUTA Y COBERTURA GLOBAL
+   ========================================================================== */
+.section-discretion { 
+    width: 100%;
+    padding: 60px 0 100px 0; 
+}
+
+.discretion-wrapper { 
+    display: flex; 
+    justify-content: center; 
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 4%;
+    box-sizing: border-box;
+}
+
+.discretion-card { 
+    width: 100%; 
+    max-width: 750px; /* Ancho amplio centrado */
+    margin: 0 auto;
+    padding: 40px 30px; 
+    text-align: center; 
+    box-sizing: border-box;
+}
+
+.discretion-ornament { 
+    font-size: 1.2rem; 
+    color: #444; 
+    margin-bottom: 20px; 
+}
+
+.discretion-title { 
+    font-family: 'Cinzel', serif;
+    font-size: 1.6rem; 
+    letter-spacing: 3px; 
+    color: #ffffff;
+    font-weight: 400;
+    margin-bottom: 30px;
+    line-height: 1.4;
+}
+
+.discretion-text { 
+    font-size: 0.95rem; 
+    line-height: 1.8; 
+    color: #aaa; 
+    margin-bottom: 20px; 
+    font-weight: 200;
+    text-align: center;
+}
+
+.highlight-white { 
+    color: #ffffff; 
+    font-weight: 400; 
+}
+
+.discretion-gold-note { 
+    font-size: 0.85rem; 
+    line-height: 1.6; 
+    color: #d4af37 !important; /* Dorado de realce */
+    font-style: italic; 
+    margin-top: 15px;
+    margin-bottom: 25px; 
+    font-weight: 300;
+    text-align: center;
+}
+
+.usage-days-box { 
+    margin-top: 40px; 
+    border-top: 1px solid #222; 
+    padding-top: 35px; 
+}
+
+.gold-symbol { 
+    color: #d4af37; 
+    font-size: 1.2rem;
+    margin-bottom: 15px; 
+}
+
+.usage-days-title { 
+    font-family: 'Cinzel', serif;
+    font-size: 1.2rem; 
+    color: #ffffff; 
+    margin-bottom: 20px; 
+    letter-spacing: 2px; 
+    text-transform: uppercase; 
+    font-weight: 400;
+}
+
+.usage-days-desc { 
+    font-size: 0.95rem; 
+    line-height: 1.8; 
+    color: #ccc; 
+    font-weight: 200;
+    text-align: center;
+}
+
+.gold-text-highlight {
+    color: #d4af37 !important;
+    font-weight: 400;
+}
+
 /* FOOTER */
 .atelier-footer { 
     text-align: center; 
