@@ -15,35 +15,7 @@
         rel="stylesheet"
     >
 
-    <link rel="stylesheet" href="style.css?v=3">
-
-    <!-- Ajustes visuales de los Vínculos -->
-    <style>
-        .package-editorial-card .pack-description {
-            color: #cbc2ba;
-            line-height: 1.8;
-        }
-
-        .package-editorial-card .pack-hook {
-            display: block;
-            color: #c5a059;
-            font-style: italic;
-            font-size: 1rem;
-            margin-bottom: 12px;
-            line-height: 1.6;
-        }
-
-        .package-editorial-card .pack-list {
-            margin-top: 28px;
-            margin-bottom: 30px;
-        }
-
-        .package-editorial-card .pack-list li {
-            color: #d0c7c0;
-            line-height: 1.7;
-            margin-bottom: 16px;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css?v=4">
 </head>
 
 <body>
@@ -99,14 +71,15 @@
     </section>
 
 
-<!-- =========================================================
+    <!-- =========================================================
          ESTANCIA 2: BIENVENIDA DE AGATHA
+         (COMPUTADORA: FOTO IZQUIERDA | CELULAR: FOTO ARRIBA)
          ========================================================= -->
     <section class="agatha-entrance-screen d-none-flex" id="agatha-screen">
 
         <div class="agatha-split-container">
 
-            <!-- 1. IZQUIERDA (EN COMPU) / ARRIBA (EN CEL): FOTO -->
+            <!-- 1. FOTO ENCUADRADA VERTICAL -->
             <div class="agatha-photo-side">
                 <div class="editorial-body-photo">
                     <img
@@ -117,7 +90,7 @@
                 </div>
             </div>
 
-            <!-- 2. DERECHA (EN COMPU) / ABAJO (EN CEL): TEXTO CENTRADO -->
+            <!-- 2. TEXTO CENTRADO Y BOTÓN -->
             <div class="agatha-text-side">
 
                 <!-- TÍTULO -->
@@ -125,7 +98,7 @@
                 <p class="agatha-greet lang-en d-none">BIENVENUE À LA MAISON</p>
 
                 <!-- BIENVENIDA EN ESPAÑOL -->
-                <div class="agatha-text lang-es" style="max-width: 520px; margin: 0 auto;">
+                <div class="agatha-text lang-es">
                     <p>Hola, cariño. Pasa, ponte cómodo.</p>
 
                     <p>
@@ -149,7 +122,7 @@
                 </div>
 
                 <!-- BIENVENIDA EN INGLÉS -->
-                <div class="agatha-text lang-en d-none" style="max-width: 520px; margin: 0 auto;">
+                <div class="agatha-text lang-en d-none">
                     <p>Hello, darling. Come in, make yourself comfortable.</p>
 
                     <p>
@@ -174,12 +147,12 @@
                 </div>
 
                 <!-- BOTÓN EN ESPAÑOL -->
-                <button class="btn-continue lang-es" onclick="revealCatalog()" style="margin-top: 25px;">
+                <button class="btn-continue lang-es" onclick="revealCatalog()">
                     AVANZAR AL RECIBIDOR →
                 </button>
 
                 <!-- BOTÓN EN INGLÉS -->
-                <button class="btn-continue lang-en d-none" onclick="revealCatalog()" style="margin-top: 25px;">
+                <button class="btn-continue lang-en d-none" onclick="revealCatalog()">
                     CONTINUE TO THE FOYER →
                 </button>
 
@@ -188,6 +161,8 @@
         </div>
 
     </section>
+
+
     <!-- =========================================================
          ATELIER PRINCIPAL
          ========================================================= -->
@@ -573,11 +548,10 @@
                         <h4 style="font-family: 'Cinzel', serif; font-size: 1.15rem; letter-spacing: 1px; margin-bottom: 15px; font-weight: 400; color: #fff; text-align: center;">
                             LA HABITACIÓN DE LOS ACUERDOS
                         </h4>
-                      
-<p class="card-italic-text discretion-gold-note"    style="font-size: 0.95rem; margin-bottom: 20px;">
-    Los mejores secretos también merecen acuerdos claros.
-</p>
 
+                        <p class="card-italic-text discretion-gold-note" style="font-size: 0.95rem; margin-bottom: 20px;">
+                            Los mejores secretos también merecen acuerdos claros.
+                        </p>
 
                         <p class="discretion-text" style="color: #c9c0ba; line-height: 1.9;">
                             Una vez que hayas elegido tu experiencia, tú y yo coordinaremos en privado los detalles de tu pedido.
@@ -591,7 +565,7 @@
                             Con el cuidado, la atención y la discreción que caracterizan a la Maison.
                         </p>
 
-                       <div class="security-badges discretion-gold-note" style="margin-top: 25px; margin-bottom: 25px; color: #c5a059;">
+                        <div class="security-badges discretion-gold-note" style="margin-top: 25px; margin-bottom: 25px; color: #c5a059;">
                             <span>✦ DISCRECIÓN</span>
                             <span>✦ CLARIDAD</span>
                             <span>✦ CONFIANZA</span>
@@ -610,7 +584,7 @@
                             THE ROOM OF AGREEMENTS
                         </h4>
 
-                       <p class="card-italic-text discretion-gold-note"    style="font-size: 0.95rem; margin-bottom: 20px;">
+                        <p class="card-italic-text discretion-gold-note" style="font-size: 0.95rem; margin-bottom: 20px;">
                             Even the finest secrets deserve clear agreements.
                         </p>
 
@@ -626,13 +600,11 @@
                             All with the care, personal attention, and discretion that define the Maison.
                         </p>
 
-                      
-<div class="security-badges discretion-gold-note"    style="margin-top: 25px; margin-bottom: 25px; color: #c5a059;">
-    <span>✦ DISCRETION</span>
-    <span>✦ CLARITY</span>
-    <span>✦ TRUST</span>
-</div>
-
+                        <div class="security-badges discretion-gold-note" style="margin-top: 25px; margin-bottom: 25px; color: #c5a059;">
+                            <span>✦ DISCRETION</span>
+                            <span>✦ CLARITY</span>
+                            <span>✦ TRUST</span>
+                        </div>
 
                         <div class="pack-action-container" style="max-width: 320px; margin: 0 auto;">
                             <a href="https://wa.me/525516915315?text=Hello%20Agatha,%20I%20would%20like%20to%20arrange%20the%20details%20of%20my%20order." class="btn-pack-wa">
@@ -646,7 +618,8 @@
 
         </section>
 
-<!-- =========================================================
+
+        <!-- =========================================================
              EL ARTE DE LA DISCRECIÓN
              ========================================================= -->
         <section class="section-discretion">
@@ -760,10 +733,12 @@
                 </div>
             </div>
         </section>
-<!-- =========================================================
+
+
+        <!-- =========================================================
              FOOTER — THE MAISON PRIVÉE BY AGATHA
              ========================================================= -->
-        <footer class="atelier-footer" style="margin-top: 30px; padding: 45px 20px 55px 20px; text-align: center; border-top: 1px solid rgba(197, 160, 89, 0.22); background: linear-gradient(to bottom, rgba(15, 13, 14, 0.4), #050505);">
+        <footer class="atelier-footer" style="background: linear-gradient(to bottom, rgba(15, 13, 14, 0.4), #050505);">
 
             <!-- DETALLE DECORATIVO SUPERIOR -->
             <div style="color: #c5a059; font-size: 0.9rem; margin-bottom: 18px; opacity: 0.8;">
@@ -787,7 +762,7 @@
                 </p>
             </div>
 
-           <!-- ENGLISH -->
+            <!-- ENGLISH -->
             <div class="lang-en d-none">
                 <p style="font-family: 'Cinzel', serif; color: #c5a059; font-style: italic; font-size: 1.15rem; letter-spacing: 1px; margin-bottom: 10px;">
                     Some secrets aren't told. They're delivered.
