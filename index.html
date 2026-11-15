@@ -99,22 +99,33 @@
     </section>
 
 
-   <!-- =========================================================
-         ESTANCIA 2: BIENVENIDA DE AGATHA
+  <!-- =========================================================
+         ESTANCIA 2: BIENVENIDA DE AGATHA (FOTO PRIMERO)
          ========================================================= -->
     <section class="agatha-entrance-screen d-none-flex" id="agatha-screen">
 
-        <div class="agatha-split-container" style="max-width: 1180px; width: 92%; margin: 0 auto; justify-content: space-between; align-items: center; gap: 60px;">
+        <div class="agatha-split-container" style="max-width: 720px; width: 90%; margin: 0 auto; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 35px; padding: 50px 0;">
 
-            <!-- COLUMNA IZQUIERDA: TEXTO CENTRADO -->
-            <div class="agatha-text-side" style="text-align: center; flex: 1.1; display: flex; flex-direction: column; align-items: center;">
+            <!-- 1. PRIMERO: FOTO ENCUADRADA VERTICAL -->
+            <div class="agatha-photo-side" style="width: 100%; display: flex; justify-content: center;">
+                <div class="editorial-body-photo" style="max-width: 340px;">
+                    <img
+                        src="1.2.jpeg"
+                        alt="Silueta sensual de perfil Agatha"
+                        class="agatha-back-photo"
+                    >
+                </div>
+            </div>
+
+            <!-- 2. SEGUNDO: TEXTO CENTRADO Y BOTÓN -->
+            <div class="agatha-text-side" style="width: 100%; display: flex; flex-direction: column; align-items: center; text-align: center;">
 
                 <!-- TÍTULO -->
                 <p class="agatha-greet lang-es" style="text-align: center;">BIENVENUE À LA MAISON</p>
                 <p class="agatha-greet lang-en d-none" style="text-align: center;">BIENVENUE À LA MAISON</p>
 
                 <!-- BIENVENIDA EN ESPAÑOL -->
-                <div class="agatha-text lang-es" style="text-align: center; max-width: 520px; margin: 0 auto;">
+                <div class="agatha-text lang-es" style="text-align: center; max-width: 540px; margin: 0 auto;">
                     <p>Hola, cariño. Pasa, ponte cómodo.</p>
 
                     <p>
@@ -138,7 +149,7 @@
                 </div>
 
                 <!-- BIENVENIDA EN INGLÉS -->
-                <div class="agatha-text lang-en d-none" style="text-align: center; max-width: 520px; margin: 0 auto;">
+                <div class="agatha-text lang-en d-none" style="text-align: center; max-width: 540px; margin: 0 auto;">
                     <p>Hello, darling. Come in, make yourself comfortable.</p>
 
                     <p>
@@ -172,17 +183,6 @@
                     CONTINUE TO THE FOYER →
                 </button>
 
-            </div>
-
-            <!-- COLUMNA DERECHA: FOTO ENCUADRADA VERTICAL -->
-            <div class="agatha-photo-side" style="flex: 0.9; display: flex; justify-content: flex-end;">
-                <div class="editorial-body-photo">
-                    <img
-                        src="1.2.jpeg"
-                        alt="Silueta sensual de perfil Agatha"
-                        class="agatha-back-photo"
-                    >
-                </div>
             </div>
 
         </div>
