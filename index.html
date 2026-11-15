@@ -99,22 +99,22 @@
     </section>
 
 
-    <!-- =========================================================
+   <!-- =========================================================
          ESTANCIA 2: BIENVENIDA DE AGATHA
          ========================================================= -->
     <section class="agatha-entrance-screen d-none-flex" id="agatha-screen">
 
-        <div class="agatha-split-container">
+        <div class="agatha-split-container" style="max-width: 1180px; width: 92%; margin: 0 auto; justify-content: space-between; align-items: center; gap: 60px;">
 
-            <!-- COLUMNA IZQUIERDA: TEXTO -->
-            <div class="agatha-text-side">
+            <!-- COLUMNA IZQUIERDA: TEXTO CENTRADO -->
+            <div class="agatha-text-side" style="text-align: center; flex: 1.1; display: flex; flex-direction: column; align-items: center;">
 
                 <!-- TÍTULO -->
-                <p class="agatha-greet lang-es">BIENVENUE À LA MAISON</p>
-                <p class="agatha-greet lang-en d-none">BIENVENUE À LA MAISON</p>
+                <p class="agatha-greet lang-es" style="text-align: center;">BIENVENUE À LA MAISON</p>
+                <p class="agatha-greet lang-en d-none" style="text-align: center;">BIENVENUE À LA MAISON</p>
 
                 <!-- BIENVENIDA EN ESPAÑOL -->
-                <div class="agatha-text lang-es">
+                <div class="agatha-text lang-es" style="text-align: center; max-width: 520px; margin: 0 auto;">
                     <p>Hola, cariño. Pasa, ponte cómodo.</p>
 
                     <p>
@@ -138,7 +138,7 @@
                 </div>
 
                 <!-- BIENVENIDA EN INGLÉS -->
-                <div class="agatha-text lang-en d-none">
+                <div class="agatha-text lang-en d-none" style="text-align: center; max-width: 520px; margin: 0 auto;">
                     <p>Hello, darling. Come in, make yourself comfortable.</p>
 
                     <p>
@@ -163,19 +163,19 @@
                 </div>
 
                 <!-- BOTÓN EN ESPAÑOL -->
-                <button class="btn-continue lang-es" onclick="revealCatalog()">
+                <button class="btn-continue lang-es" onclick="revealCatalog()" style="margin-top: 25px;">
                     AVANZAR AL RECIBIDOR →
                 </button>
 
                 <!-- BOTÓN EN INGLÉS -->
-                <button class="btn-continue lang-en d-none" onclick="revealCatalog()">
+                <button class="btn-continue lang-en d-none" onclick="revealCatalog()" style="margin-top: 25px;">
                     CONTINUE TO THE FOYER →
                 </button>
 
             </div>
 
             <!-- COLUMNA DERECHA: FOTO ENCUADRADA VERTICAL -->
-            <div class="agatha-photo-side">
+            <div class="agatha-photo-side" style="flex: 0.9; display: flex; justify-content: flex-end;">
                 <div class="editorial-body-photo">
                     <img
                         src="1.2.jpeg"
@@ -188,8 +188,6 @@
         </div>
 
     </section>
-
-
     <!-- =========================================================
          ATELIER PRINCIPAL
          ========================================================= -->
